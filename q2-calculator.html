@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Arithmetic Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Homemade Arithmetic Calculator</h2>
+
+    <table id="calcTable">
+      <tr>
+        <td>Number 1:</td>
+        <td><input type="number" id="num1" min="0" /></td>
+      </tr>
+      <tr>
+        <td>Number 2:</td>
+        <td><input type="number" id="num2" min="0" /></td>
+      </tr>
+      <tr>
+        <td>Operation:</td>
+        <td>
+          <select id="operation">
+            <option value="+">Add (+)</option>
+            <option value="-">Subtract (-)</option>
+            <option value="*">Multiply (×)</option>
+            <option value="/">Divide (÷)</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button id="calcBtn">Calculate</button></td>
+      </tr>
+      <tr>
+        <td>Result:</td>
+        <td><span id="result"></span></td>
+      </tr>
+    </table>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>

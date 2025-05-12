@@ -6,8 +6,8 @@ window.addEventListener("DOMContentLoaded", function () {
   const calcBtn = document.getElementById("calcBtn");
   const resetBtn = document.getElementById("resetBtn");
 
-  // Perform calculation on click
-  calcBtn.addEventListener("click", function () {
+  // Function to perform calculation
+  function calculate() {
     const num1 = parseFloat(num1Input.value);
     const num2 = parseFloat(num2Input.value);
     const operation = operationSelect.value;
@@ -31,7 +31,6 @@ window.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Perform operation
     let result;
     switch (operation) {
       case "+":
@@ -46,27 +45,29 @@ window.addEventListener("DOMContentLoaded", function () {
       case "/":
         result = num1 / num2;
         break;
+      case "%":
+        result = num1 % num2;
+        break;
+      case "^":
+        result = Math.pow(num1, num2);
+        break;
+      default:
+        result = "Invalid operation";
     }
 
-    resultField.textContent = `Result: ${result}`;
-    resultField.style.color = "#333";
-  });
+    resultField.textContent = `${num1} ${operation} ${num2} = ${result}`;
+    resultField.style.color = "#3e684a";
+  }
 
-  // Clear result on input change
-  ["num1", "num2", "operation"].forEach((id) => {
-    document.getElementById(id).addEventListener("input", () => {
-      resultField.textContent = "";
-    });
-  });
+  // Event listeners
+  calcBtn.addEventListener("click", calculate);
 
-  // Allow Enter key to calculate
   num2Input.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
-      calcBtn.click();
+      calculate();
     }
   });
 
-  // Reset button functionality (if present)
   if (resetBtn) {
     resetBtn.addEventListener("click", () => {
       num1Input.value = "";

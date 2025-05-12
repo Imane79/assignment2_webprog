@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Register</h2>
+
+    <form id="registrationForm" novalidate>
+      <label>Username:</label><br />
+      <input type="text" id="username" /><br />
+      <span id="usernameMessage" class="message"></span><br />
+
+      <label>Email:</label><br />
+      <input type="email" id="email" /><br />
+      <span id="emailMessage" class="message"></span><br />
+
+      <label>Password:</label><br />
+      <input type="password" id="password" /><br />
+      <span id="passwordMessage" class="message"></span><br />
+
+      <label>Confirm Password:</label><br />
+      <input type="password" id="confirmPassword" /><br />
+      <span id="confirmPasswordMessage" class="message"></span><br /><br />
+
+      <button type="submit">Submit</button>
+      <button type="button" id="resetBtn">Reset</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="rsapp.js"></script>
+  </body>
+</html>

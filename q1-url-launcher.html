@@ -6,15 +6,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2>URL Launcher</h2>
+    <h2>🌸 Cozy URL Launcher</h2>
 
     <div class="launcher-container">
       <input
         type="text"
         id="urlInput"
-        placeholder="e.g. google.com or https://github.com"
+        placeholder="e.g. cozy.com or https://github.com"
       />
+      <br />
       <button id="openBtn">Open URL</button>
+
+      <div id="historySection">
+        <h3>Opened Links</h3>
+        <ul id="historyList"></ul>
+      </div>
     </div>
 
     <script src="script.js"></script>

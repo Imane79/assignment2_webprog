@@ -1,95 +1,182 @@
+/* ========== GLOBAL STYLES ========== */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f3fdf5;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  padding-top: 80px;
   margin: 0;
 }
 
 h2 {
+  color: #4a7c59;
   margin-bottom: 20px;
-  color: #333;
 }
 
+/* ========== Q1: URL Launcher ========== */
 .launcher-container {
-  background: white;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  background-color: #f0fbf3;
+  border: 2px solid #cdecd6;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(74, 124, 89, 0.1);
+  padding: 40px 50px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 input[type="text"] {
-  width: 320px;
+  width: 80%;
   padding: 12px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 2px solid #cdecd6;
+  border-radius: 12px;
   outline: none;
-  transition: border 0.3s ease;
+  transition: border 0.3s;
+  background-color: #ffffff;
 }
 
 input[type="text"]:focus {
-  border-color: #007bff;
+  border-color: #7abf91;
 }
 
 button {
-  padding: 12px 20px;
+  margin-top: 15px;
+  padding: 12px 24px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: #7abf91;
   color: white;
   border: none;
-  border-radius: 8px;
-  margin-left: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #0056b3;
-}
-#calcTable {
-  margin: 0 auto;
-  border-collapse: separate;
-  border-spacing: 10px;
-  background-color: #fff;
-  padding: 25px 40px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
+  background-color: #5ea87a;
 }
 
-#calcTable td {
-  padding: 5px;
+#historySection {
+  margin-top: 30px;
+  text-align: left;
+}
+
+#historySection h3 {
+  color: #4a7c59;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#historyList li {
+  margin-bottom: 8px;
+}
+
+#historyList a {
+  color: #3e684a;
+  text-decoration: none;
+  font-weight: 500;
+  background-color: #e4f6e9;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+#historyList a:hover {
+  background-color: #cdecd6;
+  color: #2c5c3e;
+}
+
+/* ========== Q2: Arithmetic Calculator ========== */
+#calcTable {
+  background-color: #f0fbf3;
+  border: 2px solid #cdecd6;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(74, 124, 89, 0.1);
+  padding: 40px 50px;
+  max-width: 500px;
+  width: 90%;
+  font-size: 16px;
+  text-align: left;
 }
 
 #calcTable input,
 #calcTable select {
   width: 200px;
-  padding: 8px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-#calcBtn {
-  background-color: #28a745;
-  color: white;
-  padding: 10px 16px;
-  border: none;
+  padding: 10px;
   font-size: 16px;
   border-radius: 8px;
-  cursor: pointer;
+  border: 2px solid #cdecd6;
+  background-color: #ffffff;
 }
 
-#calcBtn:hover {
-  background-color: #218838;
+#calcBtn,
+#resetBtn {
+  background-color: #7abf91;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 10px;
+}
+
+#calcBtn:hover,
+#resetBtn:hover {
+  background-color: #5ea87a;
 }
 
 #result {
   font-weight: bold;
   font-size: 18px;
-  color: #333;
+  color: #3e684a;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ========== Q3: Form Validation ========== */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input.success {
+  border: 2px solid green;
+}
+
+input.error {
+  border: 2px solid red;
+}
+
+.message {
+  color: red;
+  font-size: 0.9em;
+  height: 16px;
+  display: block;
 }
